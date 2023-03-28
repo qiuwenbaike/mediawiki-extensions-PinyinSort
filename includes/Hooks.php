@@ -1,13 +1,12 @@
 <?php
 
-namespace PinyinSort;
+namespace MediaWiki\Extension\PinyinSort;
 
-use PinyinSort\PinyinCollation;
-use PinyinSort\PinyinCollationNoPrefix;
+use MediaWiki\Extension\PinyinSort\PinyinCollation;
+use MediaWiki\Extension\PinyinSort\PinyinCollationNoPrefix;
 
 class Hooks
 {
-
 	public static function onFactory($collationName, &$collationObj)
 	{
 		if ($collationName === 'pinyin') {

@@ -10,16 +10,19 @@
 	"version": "0.2.2",
 	"license-name": "BSD-2-Clause",
 	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.43.0"
+	},
 	"MessagesDirs": {
 		"PinyinSort": [
 			"i18n"
 		]
 	},
 	"AutoloadNamespaces": {
-		"PinyinSort\\": "includes/"
+		"MediaWiki\\Extension\\PinyinSort\\": "includes/"
 	},
 	"Hooks": {
-		"Collation::factory": "PinyinSort\\Hooks::onFactory"
+		"Collation::factory": "MediaWiki\\Extension\\PinyinSort\\Hooks::onFactory"
 	},
 	"manifest_version": 2
 }

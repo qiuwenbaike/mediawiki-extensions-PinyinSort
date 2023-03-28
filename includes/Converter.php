@@ -1,8 +1,8 @@
 <?php
 
-namespace PinyinSort;
+namespace MediaWiki\Extension\PinyinSort;
 
-use PinyinSort\ConversionTable;
+use MediaWiki\Extension\PinyinSort\ConversionTable;
 
 class Converter
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace PinyinSort;
+namespace MediaWiki\Extension\PinyinSort;
 
 use Collation;
-use PinyinSort\Converter;
+use MediaWiki\Extension\PinyinSort\Converter;
 
 class PinyinCollation extends Collation
 {

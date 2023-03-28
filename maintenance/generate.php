@@ -24,7 +24,7 @@ $output = <<<EOT
  *
  */
 
-namespace PinyinSort;
+namespace MediaWiki\\Extension\\PinyinSort;
 
 class ConversionTable
 {
