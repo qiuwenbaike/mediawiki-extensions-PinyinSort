@@ -5,7 +5,7 @@
 		"Func",
 		"​Qiuwen Baike Contributors"
 	],
-	"url": "https://git.qiuwen.net.cn/Fork/mediawiki-extensions-PinyinSortF",
+	"url": "https://git.qiuwen.net.cn/Fork/mediawiki-extensions-PinyinSort",
 	"descriptionmsg": "pinyinsort_desc",
 	"version": "0.2.2",
 	"license-name": "BSD-2-Clause",
@@ -16,7 +16,7 @@
 		]
 	},
 	"AutoloadNamespaces": {
-		"PinyinSort": "includes/"
+		"PinyinSort\\": "includes/"
 	},
 	"Hooks": {
 		"Collation::factory": "PinyinSort\\Hooks::onFactory"
