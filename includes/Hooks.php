@@ -1,9 +1,12 @@
 <?php
+
 namespace PinyinSort;
 
-class Hooks {
+class Hooks
+{
 
-	public static function onFactory($collationName, &$collationObj) {
+	public static function onFactory($collationName, &$collationObj)
+	{
 		if ($collationName === 'pinyin') {
 			$collationObj = new PinyinCollation();
 		} else if ($collationName === 'pinyin-noprefix') {
@@ -11,5 +14,4 @@ class Hooks {
 		}
 		return true;
 	}
-
 }

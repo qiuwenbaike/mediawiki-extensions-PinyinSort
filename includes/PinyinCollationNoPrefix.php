@@ -1,15 +1,21 @@
 <?php
+
 namespace PinyinSort;
 
-class PinyinCollationNoPrefix extends \Collation {
+use Collation;
+
+class PinyinCollationNoPrefix extends Collation
+{
 
 	private $collation;
 
-	public function __construct() {
+	public function __construct()
+	{
 		$this->collation = new PinyinCollation();
 	}
 
-	private static function process($string) {
+	private static function process($string)
+	{
 		if (strpos($string, "\n") !== false) {
 			return $string;
 		} else {
@@ -22,12 +28,14 @@ class PinyinCollationNoPrefix extends \Collation {
 		}
 	}
 
-	public function getSortKey($string) {
+	public function getSortKey($string)
+	{
 		$string = static::process($string);
 		return $this->collation->getSortKey($string);
 	}
 
-	public function getFirstLetter($string) {
+	public function getFirstLetter($string)
+	{
 		$string = static::process($string);
 		return $this->collation->getFirstLetter($string);
 	}

@@ -60,5 +60,5 @@ foreach ($lines as $line) {
 	$output .= "        '{$char}' => '{$pinyin}',\n";
 }
 
-$output .= "    ];\n}";
+$output .= "    ];\n}\n";
 file_put_contents(__DIR__ . '/../includes/ConversionTable.php', $output);

@@ -15,11 +15,11 @@
 			"i18n"
 		]
 	},
-	"Hooks": {
-		"Collation::factory": "PinyinSort\\Hooks::onFactory"
-	},
 	"AutoloadNamespaces": {
 		"PinyinSort": "includes/"
+	},
+	"Hooks": {
+		"Collation::factory": "PinyinSort\\Hooks::onFactory"
 	},
 	"manifest_version": 2
 }

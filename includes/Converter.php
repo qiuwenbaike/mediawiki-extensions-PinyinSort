@@ -1,9 +1,12 @@
 <?php
+
 namespace PinyinSort;
 
-class Converter {
+class Converter
+{
 
-	public static function zh2pinyin($string) {
+	public static function zh2pinyin($string)
+	{
 		$len = mb_strlen($string, 'UTF-8');
 		$builder = '';
 		for ($i = 0; $i < $len; $i++) {
