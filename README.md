@@ -1,4 +1,4 @@
-# PinyinSort 0.2.0
+# PinyinSort 0.2.2
 
 Add pinyin as a category sorting collation
 
