@@ -1,7 +1,7 @@
 <?php
 
 // Maintenance script, only runnable from shell
-if (php_sapi_name() !== 'cli') {
+if (PHP_SAPI !== 'cli') {
 	exit;
 }
 
@@ -57,7 +57,7 @@ foreach ($lines as $line) {
 	$pinyin = str_replace(['ō', 'ó', 'ǒ', 'ò'], 'o', $pinyin);
 	$pinyin = str_replace(['ǖ', 'ǘ', 'ǚ', 'ǜ', 'ü'], 'v', $pinyin);
 
-	$output .= "'{$char}' => '{$pinyin}',\n";
+	$output .= "        '{$char}' => '{$pinyin}',\n";
 }
 
 $output .= "    ];\n}";
