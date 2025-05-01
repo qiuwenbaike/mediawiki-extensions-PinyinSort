@@ -5,7 +5,8 @@ if (php_sapi_name() !== 'cli') {
 	exit;
 }
 
-function uchr($code) {
+function uchr($code)
+{
 	return html_entity_decode('&#' . $code . ';', ENT_NOQUOTES, 'UTF-8');
 }
 
@@ -14,6 +15,7 @@ $lines = explode("\n", $file);
 
 $output = <<<EOT
 <?php
+
 /**
  * Chinese/Pinyin Conversion Table
  *
@@ -24,8 +26,9 @@ $output = <<<EOT
 
 namespace PinyinSort;
 
-class ConversionTable {
-public static \$zh2pinyin = array(
+class ConversionTable
+{
+    public static \$zh2pinyin = [
 
 EOT;
 
@@ -47,15 +50,15 @@ foreach ($lines as $line) {
 	$code = hexdec(str_replace('U+', '', $comp[0]));
 	$char = uchr($code);
 
-	$pinyin = str_replace(array('ā', 'á', 'ǎ', 'à'), 'a', explode(' ', $comp[2])[0]);
-	$pinyin = str_replace(array('ī', 'í', 'ǐ', 'ì'), 'i', $pinyin);
-	$pinyin = str_replace(array('ū', 'ú', 'ǔ', 'ù'), 'u', $pinyin);
-	$pinyin = str_replace(array('ē', 'é', 'ě', 'è'), 'e', $pinyin);
-	$pinyin = str_replace(array('ō', 'ó', 'ǒ', 'ò'), 'o', $pinyin);
-	$pinyin = str_replace(array('ǖ', 'ǘ', 'ǚ', 'ǜ', 'ü'), 'v', $pinyin);
+	$pinyin = str_replace(['ā', 'á', 'ǎ', 'à'], 'a', explode(' ', $comp[2])[0]);
+	$pinyin = str_replace(['ī', 'í', 'ǐ', 'ì'], 'i', $pinyin);
+	$pinyin = str_replace(['ū', 'ú', 'ǔ', 'ù'], 'u', $pinyin);
+	$pinyin = str_replace(['ē', 'é', 'ě', 'è', 'ê'], 'e', $pinyin);
+	$pinyin = str_replace(['ō', 'ó', 'ǒ', 'ò'], 'o', $pinyin);
+	$pinyin = str_replace(['ǖ', 'ǘ', 'ǚ', 'ǜ', 'ü'], 'v', $pinyin);
 
 	$output .= "'{$char}' => '{$pinyin}',\n";
 }
 
-$output .= ");\n}";
+$output .= "    ];\n}";
 file_put_contents(__DIR__ . '/../includes/ConversionTable.php', $output);
