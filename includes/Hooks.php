@@ -2,6 +2,9 @@
 
 namespace PinyinSort;
 
+use PinyinSort\PinyinCollation;
+use PinyinSort\PinyinCollationNoPrefix;
+
 class Hooks
 {
 

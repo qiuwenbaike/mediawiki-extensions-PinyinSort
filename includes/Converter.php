@@ -2,6 +2,8 @@
 
 namespace PinyinSort;
 
+use PinyinSort\ConversionTable;
+
 class Converter
 {
 

@@ -3,6 +3,7 @@
 namespace PinyinSort;
 
 use Collation;
+use PinyinSort\PinyinCollation;
 
 class PinyinCollationNoPrefix extends Collation
 {
