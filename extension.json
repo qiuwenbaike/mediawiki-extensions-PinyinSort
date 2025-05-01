@@ -1,8 +1,9 @@
 {
 	"name": "PinyinSort",
 	"author": [
-		"Gary Guo", 
-		"..."
+		"Gary Guo",
+		"Func",
+		"​Qiuwen Baike Contributors"
 	],
 	"url": "https://github.com/nbdd0121/MW-PinyinSort",
 	"descriptionmsg": "pinyinsort_desc",
