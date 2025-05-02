@@ -15,3 +15,8 @@ Add pinyin as a category sorting collation
 - Alternatively, you can use `$wgCategoryCollation = 'pinyin-noprefix';` to automatically strip prefixes.
   - For example, "Subproject:PageA" will be transformed to "PageA" during collation process.
   - You need to run `updateCollation.php` as an post-requisite for changing collation.
+
+## License
+
+- Code licensed under 2-Clause BSD License.
+  - Unihan_Readings.txt licensed under Unicode License, version 3.
