@@ -1,0 +1,47 @@
+name: Regenerate ConversionTable.php
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    branches:
+      - "**"
+      - "!dependabot/**"
+      - "!release-please--branches--**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Regenerate ConversionTable.php
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      # Regenerate ConversionTable.php
+      - name: Regenerate ConversionTable.php
+        continue-on-error: true
+        run: |
+          php ./maintenance/generate.php
+
+      # Only patch code when it is a push event
+      - name: Push the changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! git diff --exit-code --quiet; then
+            git config --global user.name "github-actions"
+            git config --global user.email "github-actions@users.noreply.github.com"
+            git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            git add .
+            git commit -am "Regenerate maintenance/ConversionTable.php" -m "Check commit and GitHub actions for more details"
+            git pull --rebase
+            git push
+          else
+            echo "No changes to commit"
+          fi
