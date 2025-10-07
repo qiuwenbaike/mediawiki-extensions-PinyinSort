@@ -19,4 +19,4 @@ Add pinyin as a category sorting collation
 ## License
 
 - Code licensed under 2-Clause BSD License.
-  - Unihan_Readings.txt licensed under Unicode License, version 3.
+  - Unihan_Readings.txt licensed under Unicode License, version 3; See <https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip> for details.
