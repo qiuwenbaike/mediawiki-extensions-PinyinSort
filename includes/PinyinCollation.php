@@ -61,6 +61,6 @@ class PinyinCollation extends Collation
 		$this->preprocess($string);
 		$firstChar = mb_substr($string, 0, 1, 'UTF-8');
 		$pinyin = Converter::zh2pinyin($firstChar);
-		return ucfirst($pinyin[0]);
+		return ucfirst(mb_substr($pinyin, 0, 1, 'UTF-8'));
 	}
 }

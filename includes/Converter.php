@@ -2,13 +2,11 @@
 
 namespace MediaWiki\Extension\PinyinSort;
 
-use MediaWiki\Extension\PinyinSort\ConversionTable;
-
 class Converter
 {
 	public static function zh2pinyin($string)
 	{
-		$transliterator = \Transliterator::create('Han-Latin; Latin-ASCII');
+		$transliterator = \Transliterator::create('Han-Latin; Latin-ASCII; [:Nonspacing Mark:] Remove; NFC');
 
 		return preg_replace_callback(
 			'/\p{Han}/u',
