@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\PinyinSort;
 
 use MediaWiki\Extension\PinyinSort\PinyinCollation;
-use MediaWiki\Extension\PinyinSort\PinyinCollationNoPrefix;
 
 class Hooks
 {
